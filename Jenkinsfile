@@ -41,8 +41,8 @@ pipeline {
         stage('Tag Images') {
             steps {
                 sh '''
-                docker tag backend $DOCKERHUB_USERNAME/$DOCKERHUB_REPO-backend:$IMAGE_TAG
-                docker tag frontend $DOCKERHUB_USERNAME/$DOCKERHUB_REPO-frontend:$IMAGE_TAG
+                docker tag $DOCKERHUB_REPO-backend:$IMAGE_TAG $DOCKERHUB_USERNAME/$DOCKERHUB_REPO-backend:$IMAGE_TAG
+                docker tag $DOCKERHUB_REPO-frontend:$IMAGE_TAG $DOCKERHUB_USERNAME/$DOCKERHUB_REPO-frontend:$IMAGE_TAG
                 '''
             }
         }
