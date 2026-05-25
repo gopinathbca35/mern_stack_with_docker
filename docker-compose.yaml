@@ -1,6 +1,6 @@
 services:
   backend:
-    image: gopinathbca35/mern-stack-backend:latest
+    build: ./backend
     ports:
       - "5050:5050"
     networks:
@@ -11,7 +11,7 @@ services:
       - mongodb
 
   frontend:
-    image: gopinathbca35/mern-stack-frontend:latest
+    build: ./frontend
     ports:
       - "5173:5173"
     networks:

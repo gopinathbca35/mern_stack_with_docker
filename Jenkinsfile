@@ -5,7 +5,6 @@ pipeline {
         DOCKERHUB_USERNAME = "gopinathbca35"
         DOCKERHUB_REPO = "mern_stack_with_docker"
         IMAGE_TAG = "latest"
-
         EC2_IP = "15.207.221.215"
         EC2_USER = "ubuntu"
     }
@@ -55,7 +54,7 @@ pipeline {
                 '''
             }
         }
-
+/*
         stage('Deploy to EC2') {
             steps {
                 sshagent(['EC2_SSH_KEY']) {
@@ -77,18 +76,18 @@ pipeline {
             }
         }
     }
-
+*/
     post {
         always {
             sh 'docker ps'
         }
 
         success {
-            echo "✅ Application Deployed Successfully on EC2"
+            echo "Application Deployed Successfully on EC2"
         }
 
         failure {
-            echo "❌ Pipeline Failed"
+            echo "Pipeline Failed"
         }
     }
 }
