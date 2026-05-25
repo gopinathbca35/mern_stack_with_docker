@@ -53,7 +53,7 @@ export default function Record() {
       let response;
       if (isNew) {
         // if we are adding a new record we will POST to /record.
-        response = await fetch("${API_URL}/record", {
+        response = await fetch(`${API_URL}/record`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
