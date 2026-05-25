@@ -1,6 +1,6 @@
 services:
   backend:
-     build: ./project/backend
+     build: ./backend
      ports:
        - "5050:5050"
      networks:
@@ -11,7 +11,7 @@ services:
         -mongodb
 
   frontend:
-    build: ./project/frontend
+    build: ./frontend
     ports:
       - "5173:5173" 
     networks:
