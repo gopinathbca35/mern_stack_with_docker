@@ -1,34 +1,35 @@
 services:
   backend:
-     build: ./backend
-     ports:
-       - "5050:5050"
-     networks:
-       - app_network
-     environment:
-       MONGO_URI: mongodb://mongodb:27017/appdb
-       depends_on:
-        -mongodb
+    build: ./backend
+    ports:
+      - "5050:5050"
+    networks:
+      - app_network
+    environment:
+      MONGO_URI: mongodb://mongodb:27017/appdb
+    depends_on:
+      - mongodb
 
   frontend:
     build: ./frontend
     ports:
-      - "5173:5173" 
+      - "5173:5173"
     networks:
-      - app_network   
+      - app_network
+
   mongodb:
-    image: mongo:latest  
+    image: mongo:latest
     ports:
-      - "27017:27017"  
+      - "27017:27017"
     networks:
       - app_network
     volumes:
-      - mongo-data:/data/db    
+      - mongo-data:/data/db
 
 networks:
   app_network:
-    driver: bridge 
+    driver: bridge
 
 volumes:
   mongo-data:
-    driver: local  # Persist MongoDB data locally          
+    driver: local

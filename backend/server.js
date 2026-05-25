@@ -7,7 +7,6 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use("/record", records); 
 
 app.get("/", (req, res) => {
   res.send("Backend API Running Successfully");
