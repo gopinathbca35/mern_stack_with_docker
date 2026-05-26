@@ -54,7 +54,7 @@ pipeline {
                 '''
             }
         }
-/*
+
         stage('Deploy to EC2') {
             steps {
                 sshagent(['EC2_SSH_KEY']) {
@@ -74,7 +74,7 @@ pipeline {
                     """
                 }
             }
-        } */
+        } 
     }
 
     post {
