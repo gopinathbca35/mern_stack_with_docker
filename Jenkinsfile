@@ -5,7 +5,7 @@ pipeline {
         DOCKERHUB_USERNAME = "gopinathbca35"
         DOCKERHUB_REPO = "mern_stack_with_docker"
         IMAGE_TAG = "latest"
-        EC2_IP = "15.207.221.215"
+        EC2_IP = "65.1.92.125"
         EC2_USER = "ubuntu"
     }
 
