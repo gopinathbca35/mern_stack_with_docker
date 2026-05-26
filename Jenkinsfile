@@ -62,7 +62,7 @@ pipeline {
                     ssh -o StrictHostKeyChecking=no ${EC2_USER}@${EC2_IP} '
 
                     cd /home/ubuntu/mern_stack_with_docker
-
+                    git pull origin master
                     echo "Pulling latest images"
                     docker pull $DOCKERHUB_USERNAME/$DOCKERHUB_REPO-backend:$IMAGE_TAG
                     docker pull $DOCKERHUB_USERNAME/$DOCKERHUB_REPO-frontend:$IMAGE_TAG
