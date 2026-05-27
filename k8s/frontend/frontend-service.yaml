@@ -8,4 +8,4 @@ spec:
     app: frontend
   ports:
     - port: 5173
-      targetport: 5173    
+      targetPort: 5173    
