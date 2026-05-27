@@ -5,7 +5,7 @@ pipeline {
         DOCKERHUB_USERNAME = "gopinathbca35"
         DOCKERHUB_REPO = "mern_stack_with_docker"
         IMAGE_TAG = "latest"
-        EC2_IP = "15.207.221.215"
+        EC2_IP = "65.1.92.125"
         EC2_USER = "ubuntu"
     }
 
@@ -54,13 +54,15 @@ pipeline {
                 '''
             }
         }
-/*
+
         stage('Deploy to EC2') {
             steps {
-                sshagent(['EC2_SSH_KEY']) {
+                sshagent(['ec2-cred']) {
                     sh """
                     ssh -o StrictHostKeyChecking=no ${EC2_USER}@${EC2_IP} '
 
+                    cd /home/ubuntu/mern_stack_with_docker
+                    git pull origin master
                     echo "Pulling latest images"
                     docker pull $DOCKERHUB_USERNAME/$DOCKERHUB_REPO-backend:$IMAGE_TAG
                     docker pull $DOCKERHUB_USERNAME/$DOCKERHUB_REPO-frontend:$IMAGE_TAG
@@ -74,7 +76,7 @@ pipeline {
                     """
                 }
             }
-        } */
+        } 
     }
 
     post {
