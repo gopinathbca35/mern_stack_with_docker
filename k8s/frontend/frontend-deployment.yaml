@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Deployment
+metadata: 
+  name: frontend
+  namespace: mern-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: frontend
+          image : gopinathbca35/mern_stack_with_docker-frontend:latest 
+          ports:
+            - containerPort: 5173         
