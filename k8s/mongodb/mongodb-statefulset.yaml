@@ -24,6 +24,11 @@ spec:
           volumeMounts:
             - name: mongo-storage
               mountPath: /data/db
+          startupProbe:
+            tcpSocket:
+              port: 27017
+            failureThreshold: 30
+            periodSeconds: 10    
 
   volumeClaimTemplates:
     - metadata: 
