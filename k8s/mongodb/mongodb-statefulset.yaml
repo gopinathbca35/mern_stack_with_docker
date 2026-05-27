@@ -25,7 +25,7 @@ spec:
             - name: mongo-storage
               mounthpath: /data/db
 
-  VolumeClaimTemplates:
+  volumeClaimTemplates:
     - metadata: 
         name: mongo-storage
       spec:
