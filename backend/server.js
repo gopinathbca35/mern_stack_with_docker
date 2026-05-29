@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
   res.send("Backend API Running Successfully");
 });
 
-app.use("/record", records);
+app.use("/api/record", records);
 
 // start the Express server
 app.listen(PORT, () => {
