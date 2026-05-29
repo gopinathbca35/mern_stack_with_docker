@@ -4,15 +4,15 @@ metadata:
   name: mern-ingress
   namespace: mern-app
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
   ingressClassName: nginx
   rules:
     - host: mern.local
       http:
         paths:
-          - path: /api/
-            pathType: Prefix
+          - path: /api/(.*)
+            pathType: ImplementationSpecific
             backend:
               service:
                 name: backend
